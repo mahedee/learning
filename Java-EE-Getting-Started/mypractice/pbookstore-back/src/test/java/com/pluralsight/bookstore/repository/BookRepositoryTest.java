@@ -32,6 +32,20 @@ public class BookRepositoryTest {
                 .addAsManifestResource("META-INF/test-persistence.xml", "persistence.xml");
     }
 
+    @Test(expected = Exception.class) //Exception is allowed
+    public void findWithInvalidId(){
+        bookRepository.find(null);
+    }
+
+
+    @Test(expected = Exception.class) //Exception is allowed
+    public void createInvalidBook(){
+        //Create book
+        Book book = new Book("isbn", null, 12F, 123, Language.ENGLISH, new Date(), "http://blab bala", "description");
+        book = bookRepository.create(book);
+    }
+
+
     @Test
     public void create() {
         //Test counting books
