@@ -1,0 +1,4 @@
+ng new bookstore-front --skip-git --skip-commit --prefix bs --skip-tests --skip-e2e --routing true
+ --inline-style
+
+yarn add bootstrap@4.0.0-alpha.6
