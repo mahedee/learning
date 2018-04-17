@@ -1,0 +1,8 @@
+ng new bookstore-front --skip-git --skip-commit --prefix bs --skip-tests --skip-e2e --routing true
+ --inline-style
+
+
+ng generate component book-list --spec false --inline-style
+
+ctrl+alt+l = formatting for intillij
+
