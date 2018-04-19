@@ -12,7 +12,7 @@ import {BooksApi} from '../service/api/BooksApi';
 })
 export class BookFormComponent implements OnInit {
 
-  private book: Book;
+  book: Book = {};
 
   constructor(private router: Router, private bookService: BooksApi) { }
 

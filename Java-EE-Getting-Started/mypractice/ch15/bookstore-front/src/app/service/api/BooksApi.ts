@@ -78,6 +78,7 @@ export class BooksApi {
 
         const queryParameters = new URLSearchParams();
         const headerParams = this.defaultHeaders;
+        headerParams.set('Content-Type', 'application/json');
         // verify required parameter 'body' is not null or undefined
         if (body === null || body === undefined) {
             throw new Error('Required parameter body was null or undefined when calling createBook.');
@@ -85,7 +86,7 @@ export class BooksApi {
         const requestOptions: RequestOptionsArgs = {
             method: 'POST',
             headers: headerParams,
-            search: queryParameters
+            search: queryParameters,
         };
         requestOptions.body = JSON.stringify(body);
 
@@ -94,7 +95,7 @@ export class BooksApi {
                 if (response.status === 204) {
                     return undefined;
                 } else {
-                    return response.json();
+                    return JSON.stringify(response);
                 }
             });
     }
